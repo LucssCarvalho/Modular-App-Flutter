@@ -10,12 +10,11 @@ class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
         Bind((i) => AppController()),
-        Bind((i) => Dio(BaseOptions(baseUrl: URL_BASE)))
       ];
 
   @override
   List<ModularRouter> get routers => [
-        ModularRouter('/', module: HomeModule()),
+        ModularRouter(Modular.initialRoute, module: HomeModule()),
       ];
 
   @override
