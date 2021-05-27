@@ -13,8 +13,8 @@ class AppModule extends MainModule {
   @override
   List<Bind> get binds => [
         Bind((i) => AppController()),
-        Bind((i) => HomeController(i.get())),
-        Bind((i) => PokeRepository(i.get())),
+        Bind((i) => HomeController(i.get<PokeRepository>())),
+        Bind((i) => PokeRepository(i.get<Dio>())),
         Bind((i) => Dio(BaseOptions(baseUrl: URL_BASE)))
       ];
 

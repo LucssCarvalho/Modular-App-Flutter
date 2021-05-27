@@ -12,6 +12,11 @@ abstract class _HomeControllerBase with Store {
   ObservableFuture<List<PokemonModel>> pokemons;
 
   _HomeControllerBase(this.repository) {
-    pokemons = repository.getAllPkemon().asObservable();
+    fetchPokemons();
+  }
+
+  @action
+  fetchPokemons() {
+    pokemons = repository.getAllPokemon().asObservable();
   }
 }
